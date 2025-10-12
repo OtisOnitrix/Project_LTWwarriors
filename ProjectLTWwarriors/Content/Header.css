@@ -1,0 +1,169 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    background-color: ghostwhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 84px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    gap: 50px;
+}
+
+.Logo {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 28px */
+}
+
+/*.Nav {
+    display: flex;
+    align-items: center;
+    gap: 69px;
+}
+
+.NavText {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;*/ /* 19.6px */
+    /*cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 84px;*/ /* Cho chiều cao bằng với Header */
+/*}*/
+
+/* XÓA .Nav VÀ .NavText CŨ, THAY BẰNG ĐOẠN NÀY */
+
+/* Style cho cả khối menu */
+/*.Nav ul {
+    display: flex;*/ /* Xếp các mục menu nằm ngang */
+    /*align-items: center;*/ /* Căn giữa các mục menu theo chiều dọc */
+    /*height: 84px;*/ /* Đặt chiều cao bằng header */
+    /*gap: 69px;*/ /* Khoảng cách giữa các mục */
+    /* Reset style mặc định của danh sách */
+    /*list-style-type: none;
+    margin: 0;
+    padding: 0;
+}*/
+
+/* Style cho từng link menu */
+/*.NavText {*/ /* Giờ đây là thẻ <a> */
+    /*color: #000;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;*/ /* Bỏ gạch chân link */
+    /* Căn giữa chữ bên trong khu vực của nó */
+    /*display: flex;
+    align-items: center;
+    height: 100%;*/ /* Chiếm hết chiều cao của thẻ cha (ul) */
+/*}*/
+
+
+/* XÓA HẾT CSS CŨ CỦA MENU VÀ THAY BẰNG ĐOẠN NÀY */
+
+/* 1. Style cho danh sách <ul> là chính */
+.Nav ul {
+    /* Flexbox & Alignment */
+    display: flex;
+    align-items: center; /* QUAN TRỌNG: Căn giữa các <li> theo chiều dọc */
+    /* Sizing & Spacing */
+    height: 84px; /* QUAN TRỌNG: Đặt chiều cao CỐ ĐỊNH bằng header */
+    gap: 69px; /* Khoảng cách giữa các mục */
+    /* Reset style mặc định của trình duyệt */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Style cho từng mục li */
+.Nav li {
+    height: 100%; /* Cho <li> chiếm hết 84px chiều cao của <ul> */
+}
+
+/* 3. Style cho từng link <a> */
+.NavText {
+    /* Display & Alignment */
+    display: flex; /* Cho phép <a> dùng align-items */
+    align-items: center; /* Căn giữa chữ bên trong <a> */
+    height: 100%; /* Cho <a> chiếm hết chiều cao của <li> */
+    /* Text Styling */
+    color: #000;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none; /* Bỏ gạch chân link */
+    cursor: pointer;
+}
+
+
+
+
+/* 1. Thêm viền (border) cho khung chứa bên ngoài */
+.Search {
+    flex: 1;
+    margin: 0 20px;
+    height: 40px; /* Có thể tăng chiều cao một chút */
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* THÊM DÒNG NÀY */
+    border: 1px solid #ddd; /* Tạo viền màu xám nhạt */
+    background-color: #fff; /* Đặt nền trắng cho cả khung */
+}
+
+    /* 2. Cập nhật lại padding cho input và bỏ nền riêng */
+    .Search input {
+        flex: 1;
+        height: 100%; /* Dùng 100% để vừa khít khung */
+        border-radius: 100px;
+        background: transparent; /* QUAN TRỌNG: Để nền trong suốt */
+        border: none;
+        font-size: 15px;
+        outline: none;
+        /* THAY ĐỔI PADDING */
+        padding-left: 50px; /* Tăng lên để chừa chỗ cho icon */
+        padding-right: 20px;
+    }
+
+    /* 3. Di chuyển icon từ phải sang trái */
+    .Search .SearchIcon { /* Bạn có thể dùng .Search i nếu thẻ icon là <i> */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        cursor: pointer;
+        /* THAY ĐỔI TỪ RIGHT SANG LEFT */
+        left: 20px; /* Cách lề trái 20px */
+    }
+
+    /* 4. (Tùy chọn) Style cho chữ placeholder cho đẹp */
+    .Search input::placeholder {
+        color: #888; /* Cùng màu với icon */
+        opacity: 1; /* Đảm bảo placeholder không bị mờ đi trên một số trình duyệt */
+    }
+
+.cart-icon {
+    font-size: 24px; /* kích thước icon */
+    color: orange; /* màu mặc định */
+    cursor: pointer; /* hiện bàn tay khi hover */
+    transition: 0.3s; /* hiệu ứng mượt khi đổi màu */
+}
+
+    .cart-icon:hover {
+        color: #ff6600; /* đổi màu khi hover */
+        transform: scale(1.2); /* phóng to nhẹ khi hover */
+    }

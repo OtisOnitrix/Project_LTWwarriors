@@ -1,0 +1,43 @@
+﻿@model ProjectLTWwarriors.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product-detail">
+    <div class="product-image">
+
+        @{
+            var mainImage = Model.ImageUrls.FirstOrDefault();
+        }
+
+        @if (mainImage != null)
+        {
+            <img src="@Url.Content(mainImage)" alt="@Model.Name" id="main-product-image" />
+        }
+
+        <div class="thumbnail-images">
+            @foreach (var imageUrl in Model.ImageUrls)
+            {
+                <img src="@Url.Content(imageUrl)" class="thumbnail" alt="Thumbnail" />
+            }
+        </div>
+
+    </div>
+
+    <div class="product-info">
+        <h1>@Model.Name</h1>
+        <p class="price">@string.Format("{0:N0} đ", Model.Price)</p>
+
+        @if (!string.IsNullOrEmpty(Model.Storage))
+        {
+            <p><strong>Dung lượng:</strong> @Model.Storage</p>
+        }
+
+        <div class="colors">
+            @foreach (var color in Model.Colors)
+            {
+                <span class="color-box" style="background-color:@color"></span>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #fceee9; /* Màu nền hồng nhạt của footer */
+    color: #333;
+    padding: 50px 0 20px 0;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Cho phép các cột xuống hàng trên màn hình nhỏ */
+    gap: 20px; /* Khoảng cách giữa các cột */
+}
+
+.footer-column {
+    flex: 1; /* Các cột chia đều không gian */
+    min-width: 180px; /* Độ rộng tối thiểu cho mỗi cột */
+    margin-bottom: 30px;
+}
+
+    .footer-column h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+.extra-margin-top {
+    margin-top: 30px; /* Thêm khoảng cách cho các tiêu đề phụ */
+}
+
+
+/* --- Icon Mạng xã hội --- */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+
+        .social-icons a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+/* --- Nút tải ứng dụng --- */
+.app-buttons img {
+    width: 135px; /* Điều chỉnh kích thước logo App Store / Google Play */
+    margin-bottom: 15px;
+}
+
+/* --- Dòng bản quyền --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 0 20px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}

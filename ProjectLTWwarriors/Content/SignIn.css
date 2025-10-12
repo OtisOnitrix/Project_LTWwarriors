@@ -1,0 +1,116 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    background-color: ghostwhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 84px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    gap: 50px;
+}
+
+.Logo {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 28px */
+}
+
+.Nen_trang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    font-family: sans-serif;
+}
+
+.hop-dangky {
+    background-color: white;
+    border-radius: 16px;
+    border: 1px solid #D9D9D9;
+    padding: 40px 60px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    width: 600px;
+    height: 400px
+}
+
+.Tieu_de {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.Mo_ta {
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.form_dang_ky {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.o-nhap {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    border-color: #ff8b8b;
+    padding: 10px 12px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.hang-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.toan-hang {
+    margin-bottom: 16px;
+}
+
+.hang-nut {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nut {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #FFF;
+}
+
+.nut_dang_nhap {
+    border: 1px solid #BFC0C0;
+    background: #FFB7B2;
+}
+
+.nut_dang_ky {
+    border: 1px solid #BFC0C0;
+    background: #97C6FF;
+}
+
+.nut_google {
+    border: 1px solid #BFC0C0;
+    background: #DADADA;
+}
