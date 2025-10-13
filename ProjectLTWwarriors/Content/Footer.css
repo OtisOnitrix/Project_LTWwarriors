@@ -16,7 +16,7 @@
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap; /* Cho phép các cột xuống hàng trên màn hình nhỏ */
     gap: 20px; /* Khoảng cách giữa các cột */
 }
@@ -45,6 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
     .social-icons a {
@@ -82,3 +83,17 @@
     font-size: 14px;
     color: #555;
 }
+
+/* Quy tắc này đủ mạnh để không bị file khác ghi đè */
+.site-footer a {
+    color: #555; /* Màu chữ gốc bạn muốn */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+    /* Quy tắc khi rê chuột vào link trong footer */
+    .site-footer a:hover {
+        color: #007bff; /* Thay đổi màu khi rê chuột */
+        text-decoration: underline ;
+        }
+
+

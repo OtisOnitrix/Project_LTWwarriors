@@ -1,43 +1,169 @@
 ﻿@model ProjectLTWwarriors.Models.Product
 @{
+    ViewBag.Title = "Sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Content/Product.css" rel="stylesheet" />
 
-<div class="product-detail">
-    <div class="product-image">
+<div class="khung-trang-san-pham">
+    <div class="khu-vuc-anh">
+        @{ var anhChinh = Model.ImageUrls.FirstOrDefault(); }
 
-        @{
-            var mainImage = Model.ImageUrls.FirstOrDefault();
-        }
-
-        @if (mainImage != null)
-        {
-            <img src="@Url.Content(mainImage)" alt="@Model.Name" id="main-product-image" />
-        }
-
-        <div class="thumbnail-images">
-            @foreach (var imageUrl in Model.ImageUrls)
-            {
-                <img src="@Url.Content(imageUrl)" class="thumbnail" alt="Thumbnail" />
-            }
+        <div class="khung-anh-chinh">
+            <img id="anhChinhSanPham" src="@Url.Content(anhChinh)" alt="@Model.Name" />
         </div>
 
+        <div class="danh-sach-anh-nho">
+            @foreach (var duongDanAnh in Model.ImageUrls)
+            {
+                <div class="khung-anh-nho">
+                    <img class="anh-nho" src="@Url.Content(duongDanAnh)" alt="Ảnh nhỏ" />
+                </div>
+            }
+        </div>
     </div>
 
-    <div class="product-info">
-        <h1>@Model.Name</h1>
-        <p class="price">@string.Format("{0:N0} đ", Model.Price)</p>
+    <div class="thong-tin-chi-tiet">
+        <h1 class="ten-san-pham">@Model.Name</h1>
+        <p class="gia-san-pham">@string.Format("{0:N0}đ", Model.Price)</p>
 
-        @if (!string.IsNullOrEmpty(Model.Storage))
-        {
-            <p><strong>Dung lượng:</strong> @Model.Storage</p>
-        }
+        <div class="khu-vuc-tuy-chon">
+            <label class="nhan-tuy-chon">Dung lượng</label>
+            <div class="cac-nut-tuy-chon">
+                @*<button class="nut-tuy-chon dang-chon">@Model.Storage</button>*@
+                @* Dùng vòng lặp để hiển thị tất cả các tùy chọn dung lượng *@
+                @foreach (var dungLuong in Model.Storage)
+                {
+                    <button class="nut-tuy-chon">@dungLuong</button>
+                }
+            </div>
+        </div>
 
-        <div class="colors">
-            @foreach (var color in Model.Colors)
-            {
-                <span class="color-box" style="background-color:@color"></span>
-            }
+        <div class="khu-vuc-tuy-chon">
+            <label class="nhan-tuy-chon">Màu</label>
+            <div class="cac-nut-tuy-chon">
+                @foreach (var mauSac in Model.Colors)
+                {
+                    <button class="o-mau" style="background-color: @mauSac;"></button>
+                }
+            </div>
+        </div>
+
+        <div class="bo-chon-so-luong">
+            <label class="nhan-tuy-chon">Số lượng</label>
+            <div class="khung-nhap-so-luong">
+                <button class="nut-so-luong">-</button>
+
+                <input type="text" value="1" id="soLuongMua" />
+
+                <button class="nut-so-luong">+</button>
+            </div>
+        </div>
+
+        <div class="cac-nut-hanh-dong">
+
+            <button class="nut nut-them-gio-hang" data-masp="@Model.Id">Thêm vào giỏ hàng</button>
+        </div>
+
+        <div class="cac-nut-hanh-dong">
+            <button class="nut nut-mua-ngay" data-maso="@Model.Id">Mua ngay</button>
+        </div>
+
+        <div class="khuyen-mai">
+            <ul>
+                <li>PMH PK bảo vệ iPhone 17 (trừ Apple, Beats, đơn trên 500,000đ) trị giá 150,000đ</li>
+                <li>PMH Loa, Tai nghe JBL, Harman Alpha Works, S&M, Macalioo trị giá 200,000đ</li>
+                <li>Phiếu mua hàng Airpods, Apple Watch, Macbook trị giá 500,000đ</li>
+                <li>Thu cũ đổi mới: Giảm đến 3,000,000đ (Không kèm ưu đãi thanh toán qua cổng, mua kèm).</li>
+                <li>Gói dịch vụ bảo hành mở rộng, bảo hành rơi vỡ chỉ từ 990,000đ.</li>
+                <li>Nhập mã VNPAYTGDD4 giảm tối đa 100,000đ (áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR.</li>
+            </ul>
+        </div>
+
+        <div class="khuyen-mai">
+            <ul>
+                <li>Hư gì đổi nấy 12 tháng tại 3049 siêu thị trên toàn quốc Xem chi tiết chính sách bảo hành, đổi trả</li>
+                <li> Bảo hành chính hãng 1 năm</li>
+                <li>Giao hàng nhanh toàn quốc Xem chi tiết</li>
+                <li> Tổng đài: 1900.9696.42 (8:00 - 21:30)</li>
+            </ul>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+    // Lệnh này đảm bảo code chỉ chạy khi trang web đã tải xong hoàn toàn
+    $(document).ready(function () {
+
+        // Bắt sự kiện khi người dùng click vào bất kỳ phần tử nào có class 'nut-them-gio-hang'
+        $('.nut-them-gio-hang').on('click', function (e) {
+            e.preventDefault(); // Ngăn trang tải lại khi nhấn nút
+
+            // Lấy mã sản phẩm từ thuộc tính 'data-masp' mà ta đã thêm ở trên
+            var maSanPham = $(this).data('masp');
+            // Lấy số lượng từ ô input có id là 'soLuongMua'
+            var soLuong = parseInt($('#soLuongMua').val());
+
+            // Gửi yêu cầu lên server bằng AJAX (không cần tải lại trang)
+            $.ajax({
+                url: '/Home/ThemVaoGio', // URL trỏ tới Action trong Controller
+                type: 'POST',              // Phương thức là POST
+                data: {                    // Dữ liệu gửi đi
+                    maSP: maSanPham,
+                    soLuong: soLuong
+                },
+                success: function (response) { // Hàm sẽ chạy khi server trả về kết quả thành công
+                    if (response.success) {
+                        alert(response.message); // Hiển thị thông báo "Đã thêm sản phẩm..."
+                    }
+                },
+                error: function () { // Hàm sẽ chạy nếu có lỗi
+                    alert("Có lỗi xảy ra, không thể thêm sản phẩm!");
+                }
+            });
+        });
+
+        // Code xử lý cho nút cộng trừ số lượng
+        $('.nut-so-luong').on('click', function() {
+            var input = $('#soLuongMua');
+            var currentValue = parseInt(input.val());
+            if ($(this).text() === '+') {
+                input.val(currentValue + 1);
+            } else {
+                if (currentValue > 1) { // Không cho giảm dưới 1
+                    input.val(currentValue - 1);
+                }
+            }
+        });
+
+        $('.nut-mua-ngay').on('click', function (e) {
+            e.preventDefault();
+
+            var maSanPham = $(this).data('maso');
+            var soLuong = parseInt($('#soLuongMua').val());
+
+            // Gửi yêu cầu thêm sản phẩm trước khi điều hướng
+            $.ajax({
+                url: '/Home/ThemVaoGio',
+                type: 'POST',
+                data: {
+                    maSP: maSanPham,
+                    soLuong: soLuong
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Sau khi thêm thành công => chuyển đến trang giỏ hàng
+                        window.location.href = '/Home/XemGioHang';
+                    } else {
+                        alert("Không thể thêm sản phẩm vào giỏ hàng!");
+                    }
+                },
+                error: function () {
+                    alert("Có lỗi xảy ra khi thêm sản phẩm!");
+                }
+            });
+        });
+    });
+    </script>
+}

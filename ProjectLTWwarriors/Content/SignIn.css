@@ -1,116 +1,179 @@
-﻿body {
+﻿:root {
+    --primary-color: #FFB7B2; /* Hồng nhạt */
+    --secondary-color: #97C6FF; /* Xanh nhạt */
+    --text-color: #333;
+    --border-color: #ff8b8b;
+    --background-color: #F8F9FA;
+    --card-background: #FFFFFF;
+    --google-button-bg: #F1F3F5;
+    --google-button-border: #DEE2E6;
+}
+
+body {
     margin: 0;
     padding: 0;
-}
-
-.Header {
-    background-color: ghostwhite;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    height: 84px;
-    box-sizing: border-box;
-    border-radius: 16px;
-    gap: 50px;
-}
-
-.Logo {
-    color: #000;
-    font-family: sans-serif;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 28px */
-}
-
-.Nen_trang {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
-    font-family: sans-serif;
+    min-height: 100vh;
 }
 
-.hop-dangky {
-    background-color: white;
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: var(--card-background);
     border-radius: 16px;
-    border: 1px solid #D9D9D9;
-    padding: 40px 60px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
-    width: 600px;
-    height: 400px
-}
-
-.Tieu_de {
-    text-align: center;
-    margin-bottom: 8px;
-    font-size: 30px;
-}
-
-.Mo_ta {
-    text-align: center;
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 24px;
-    margin-top: 24px;
-}
-
-.form_dang_ky {
+    border: 1px solid #E9ECEF;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 24px;
 }
 
-.o-nhap {
-    border: 1px solid #ccc;
+.header {
+    text-align: center;
+}
+
+    .header .title {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+
+    .header .description {
+        color: #555;
+        font-size: 16px;
+    }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Input + Floating Label */
+.input-group {
+    position: relative;
+}
+
+.input-field {
+    border: 1px solid #CED4DA;
     border-radius: 12px;
-    border-color: #ff8b8b;
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 14px;
+    font-size: 16px;
     width: 100%;
     box-sizing: border-box;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.hang-input {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
+    .input-field:focus {
+        border-color: var(--border-color);
+        box-shadow: 0 0 0 3px rgba(255, 183, 178, 0.2);
+    }
+
+.input-label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background-color: var(--card-background);
+    padding: 0 4px;
 }
 
-.toan-hang {
-    margin-bottom: 16px;
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--border-color);
 }
 
-.hang-nut {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+/* Forgot Password */
+.forgot-password {
+    text-align: right;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 8px;
 }
 
-.nut {
+    .forgot-password a {
+        color: #555;
+        text-decoration: none;
+    }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+/* Buttons */
+.btn {
     border: none;
     border-radius: 12px;
-    padding: 10px 0;
+    padding: 14px 0;
     width: 100%;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.2s;
-    color: #FFF;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-.nut_dang_nhap {
-    border: 1px solid #BFC0C0;
-    background: #FFB7B2;
+.btn-continue {
+    background: var(--primary-color);
+    color: white;
+    border: 1px solid #FF9A93;
 }
 
-.nut_dang_ky {
-    border: 1px solid #BFC0C0;
-    background: #97C6FF;
+    .btn-continue:hover {
+        opacity: 0.9;
+        box-shadow: 0 4px 12px rgba(255, 183, 178, 0.4);
+    }
+
+.btn-signup {
+    background: var(--secondary-color);
+    color: white;
+    border: 1px solid #82B9FF;
 }
 
-.nut_google {
-    border: 1px solid #BFC0C0;
-    background: #DADADA;
+    .btn-signup:hover {
+        opacity: 0.9;
+        box-shadow: 0 4px 12px rgba(151, 198, 255, 0.4);
+    }
+
+.btn-google {
+    background: var(--google-button-bg);
+    color: #333;
+    border: 1px solid var(--google-button-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
 }
+
+    .btn-google:hover {
+        background-color: #E9ECEF;
+    }
+
+    .btn-google svg {
+        width: 18px;
+        height: 18px;
+    }

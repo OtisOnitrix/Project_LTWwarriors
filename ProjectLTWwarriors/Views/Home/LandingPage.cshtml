@@ -18,7 +18,9 @@
 <body>
     <div> 
         <section>
-            <div class="Banner"></div>
+
+            
+            <a class="Banner" href="/Home/LandingPage"></a>
 
 
             @*IPHONE*@
@@ -27,27 +29,38 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/image 22.png" />
-                        <p class="TheSanPham_TenThietBi">iPhone 17 promax 256GB</p>
-                        <p class="TheSanPham_Gia">37.990.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 1 })"> 
+                            <img class="TheSanPham_HinhAnh"  src="~/images_LandingPage/iphone-17-pro-blue-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">iPhone 17 promax 256GB</p>
+                            <p class="TheSanPham_Gia">37.990.000đ</p>
+                        </a>
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17-pro.png" />
-                        <p class="TheSanPham_TenThietBi">iPhone 17 pro 256GB</p>
-                        <p class="TheSanPham_Gia">34.990.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 2 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17-pro.png" />
+                            <p class="TheSanPham_TenThietBi">iPhone 17 pro 256GB</p>
+                            <p class="TheSanPham_Gia">34.990.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17.png" />
-                        <p class="TheSanPham_TenThietBi">iPhone 17 Air 256GB</p>
-                        <p class="TheSanPham_Gia">31.990.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 3 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17.png" />
+                            <p class="TheSanPham_TenThietBi">iPhone 17 Air 256GB</p>
+                            <p class="TheSanPham_Gia">31.990.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-air-xanh.png" />
-                        <p class="TheSanPham_TenThietBi">iPhone 17 256GB</p>
-                        <p class="TheSanPham_Gia">24.990.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 4 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-air-xanh.png" />
+                            <p class="TheSanPham_TenThietBi">iPhone 17 256GB</p>
+                            <p class="TheSanPham_Gia">24.990.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -60,27 +73,39 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/mac-air-m1-13-xam-new-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M1 8GB/256GB</p>
-                        <p class="TheSanPham_Gia">16.990.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 5 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/mac-air-m1-13-xam-new-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M1 8GB/256GB</p>
+                            <p class="TheSanPham_Gia">16.990.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/mac-air-m2-13-xanh-new-1-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M2 16GB/256GB/8GPU</p>
-                        <p class="TheSanPham_Gia">20.090.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 6 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/mac-air-m2-13-xanh-new-1-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M2 16GB/256GB/8GPU</p>
+                            <p class="TheSanPham_Gia">20.090.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/macbook-air-13-inch-m4-16gb-256gb-sac-70w-xanh-den-thumb-638903417001618599-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M4 16GB/256GB</p>
-                        <p class="TheSanPham_Gia">25.590.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 7 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/macbook-air-13-inch-m4-16gb-256gb-sac-70w-xanh-den-thumb-638903417001618599-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M4 16GB/256GB</p>
+                            <p class="TheSanPham_Gia">25.590.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/macbook-air-13-inch-m4-thumb-vang-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M4 16GB/256GB Sạc 70W</p>
-                        <p class="TheSanPham_Gia">26.190.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 8 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/macbook-air-13-inch-m4-thumb-vang-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">MacBook Air 13 inch M4 16GB/256GB Sạc 70W</p>
+                            <p class="TheSanPham_Gia">26.190.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -93,27 +118,39 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-air-m3-11-inch-wifi-blue-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">iPad A16 WiFi 128GB</p>
-                        <p class="TheSanPham_Gia">9.690.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 9 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-air-m3-11-inch-wifi-blue-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">iPad A16 WiFi 128GB</p>
+                            <p class="TheSanPham_Gia">9.690.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-air-m3-11-inch-wifi-blue-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">iPad mini 7 WiFi 128GB</p>
-                        <p class="TheSanPham_Gia">13.590.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 10 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-air-m3-11-inch-wifi-blue-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">iPad mini 7 WiFi 128GB</p>
+                            <p class="TheSanPham_Gia">13.590.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-mini-7-wifi-purple-thumbtz-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">iPad Air M3 11 inch WiFi 128GB</p>
-                        <p class="TheSanPham_Gia">16.390.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 11 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-mini-7-wifi-purple-thumbtz-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">iPad Air M3 11 inch WiFi 128GB</p>
+                            <p class="TheSanPham_Gia">16.390.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-pro-11-inch-wifi-silver-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">iPad Pro M4 11 inch WiFi 256GB</p>
-                        <p class="TheSanPham_Gia">27.290.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 12 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/ipad-pro-11-inch-wifi-silver-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">iPad Pro M4 11 inch WiFi 256GB</p>
+                            <p class="TheSanPham_Gia">27.290.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -127,27 +164,39 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-42mm-vien-nhom-day-the-thao-vang-hong-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS 42mm viền nhôm dây thể thao </p>
-                        <p class="TheSanPham_Gia">11.490.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 13 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-42mm-vien-nhom-day-the-thao-vang-hong-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS 42mm viền nhôm dây thể thao </p>
+                            <p class="TheSanPham_Gia">11.490.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-46mm-vien-nhom-day-the-thao-den-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS 46mm viền nhôm dây thể thao</p>
-                        <p class="TheSanPham_Gia">12.350.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 14 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-46mm-vien-nhom-day-the-thao-den-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS 46mm viền nhôm dây thể thao</p>
+                            <p class="TheSanPham_Gia">12.350.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-gps-cellular-vien-nhom-day-the-thao-vang-hong-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS + Cellular 42mm viền nhôm dây thể thao</p>
-                        <p class="TheSanPham_Gia">14.490.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 15 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-gps-cellular-vien-nhom-day-the-thao-vang-hong-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS + Cellular 42mm viền nhôm dây thể thao</p>
+                            <p class="TheSanPham_Gia">14.490.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-gps-cellular-vien-nhom-day-the-thao-xam-thumb-1-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS + Cellular 46mm viền nhôm dây thể thao</p>
-                        <p class="TheSanPham_Gia">15.350.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 16 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-watch-series-11-gps-cellular-vien-nhom-day-the-thao-xam-thumb-1-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Apple Watch Series 11 GPS + Cellular 46mm viền nhôm dây thể thao</p>
+                            <p class="TheSanPham_Gia">15.350.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -161,27 +210,39 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/tai-nghe-co-day-apple-mtjy3-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">EarPods jack cắm USB-C</p>
-                        <p class="TheSanPham_Gia">540.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 17 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/tai-nghe-co-day-apple-mtjy3-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">EarPods jack cắm USB-C</p>
+                            <p class="TheSanPham_Gia">540.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/airpods-4-thumb-1-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">AirPods 4</p>
-                        <p class="TheSanPham_Gia">3.590.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 18 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/airpods-4-thumb-1-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">AirPods 4</p>
+                            <p class="TheSanPham_Gia">3.590.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/tai-nghe-bluetooth-airpods-pro-2nd-gen-usb-c-charge-apple-thumb-12-1-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">AirPods Pro (2nd Gen) USB-C</p>
-                        <p class="TheSanPham_Gia">5.590.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 19 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/tai-nghe-bluetooth-airpods-pro-2nd-gen-usb-c-charge-apple-thumb-12-1-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">AirPods Pro (2nd Gen) USB-C</p>
+                            <p class="TheSanPham_Gia">5.590.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/loa-bluetooth-marshall-emberton-iii-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Loa Bluetooth Marshall Emberton III</p>
-                        <p class="TheSanPham_Gia">4.450.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 20 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/loa-bluetooth-marshall-emberton-iii-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Loa Bluetooth Marshall Emberton III</p>
+                            <p class="TheSanPham_Gia">4.450.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -195,27 +256,39 @@
 
                 <div class="Danh_Sach_San_Pham">
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/adapter-sac-type-c-20w-cho-iphone-ipad-apple-mhje3-101021-023343-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Adapter sạc Apple USB_C 20W</p>
-                        <p class="TheSanPham_Gia">540.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 21 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/adapter-sac-type-c-20w-cho-iphone-ipad-apple-mhje3-101021-023343-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Adapter sạc Apple USB_C 20W</p>
+                            <p class="TheSanPham_Gia">540.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-pencil-pro-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Apple Pencil Pro</p>
-                        <p class="TheSanPham_Gia">3.190.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 22 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/apple-pencil-pro-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Apple Pencil Pro</p>
+                            <p class="TheSanPham_Gia">3.190.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/cap-type-c-type-c-1m-apple-mqkj3-thumb-5-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Cáp sạc Type C - Type C 1m</p>
-                        <p class="TheSanPham_Gia">540.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 23 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/cap-type-c-type-c-1m-apple-mqkj3-thumb-5-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Cáp sạc Type C - Type C 1m</p>
+                            <p class="TheSanPham_Gia">540.000đ</p>
+                        </a>
+                        
                     </div>
 
                     <div class="The_San_Pham">
-                        <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/bao-da-smart-folio-cho-ipad-pro-m4-11-inch-thumb-650x650.png" />
-                        <p class="TheSanPham_TenThietBi">Bao da Smart Folio cho iPad Pro M4 11 inch</p>
-                        <p class="TheSanPham_Gia">2.190.000đ</p>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = 24 })">
+                            <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/bao-da-smart-folio-cho-ipad-pro-m4-11-inch-thumb-650x650.png" />
+                            <p class="TheSanPham_TenThietBi">Bao da Smart Folio cho iPad Pro M4 11 inch</p>
+                            <p class="TheSanPham_Gia">2.190.000đ</p>
+                        </a>
+                        
                     </div>
                 </div>
 

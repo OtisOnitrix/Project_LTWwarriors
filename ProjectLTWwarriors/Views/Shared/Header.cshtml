@@ -1,20 +1,10 @@
-﻿@{
-    Layout = null;
-}
+﻿
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-    <link href="~/Content/Header.css" rel="stylesheet" />
-</head>
-<body>
-    <div>
+
         <header class="Header">
             <div class="Logo"> LTW Warriors</div>
-            <div class="Nav">
+            <nav class="Nav">
                 <ul>
                     <li><a href="#" class="NavText">iPhone</a></li>
                     <li><a href="#" class="NavText">Mac</a></li>
@@ -24,14 +14,22 @@
                     <li><a href="#" class="NavText">Phụ kiện</a></li>
                 </ul>
                 
-            </div>
+            </nav>
             <div class="Search">
                 <i class="fa-solid fa-magnifying-glass SearchIcon"></i>
                 <input type="text" placeholder="Tìm kiếm...">
             </div>
-            <div><i class="fas fa-shopping-cart cart-icon"></i></div>
-            <div><i class="fa-regular fa-circle-user cart-icon"></i></div>
+            <div>
+                <a href="/Home/XemGioHang">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                </a>  
+            </div>
+
+            <div>
+                <a href="/Home/SignIn">
+                    <i class="fa-regular fa-circle-user cart-icon"></i>
+                </a>
+                
+            </div>
         </header>
-    </div>
-</body>
-</html>
+

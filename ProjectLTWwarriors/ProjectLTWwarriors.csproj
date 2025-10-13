@@ -125,6 +125,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatHangTrongGio.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,8 +147,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Footer.css" />
+    <Content Include="Content\GioHangCoSanPham.css" />
+    <Content Include="Content\GioHangTrong.css" />
     <Content Include="Content\Header.css" />
     <Content Include="Content\LandingPage.css" />
+    <Content Include="Content\Product.css" />
     <Content Include="Content\SignIn.css" />
     <Content Include="Content\SignUp.css" />
     <Content Include="favicon.ico" />
@@ -168,6 +172,7 @@
     <Content Include="images_LandingPage\ipad-air-m3-11-inch-wifi-blue-thumb-650x650.png" />
     <Content Include="images_LandingPage\ipad-mini-7-wifi-purple-thumbtz-650x650.png" />
     <Content Include="images_LandingPage\ipad-pro-11-inch-wifi-silver-thumb-650x650.png" />
+    <Content Include="images_LandingPage\iphone-17-pro-blue-thumb-650x650.png" />
     <Content Include="images_LandingPage\iphone-17-pro.png" />
     <Content Include="images_LandingPage\iphone-17.png" />
     <Content Include="images_LandingPage\iphone-air-xanh.png" />
@@ -212,9 +217,14 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\GioHangTrong.cshtml" />
+    <Content Include="Views\Home\GioHangCoSanPham.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images_Product_Detail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

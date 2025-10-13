@@ -1,0 +1,134 @@
+﻿body {
+}
+
+:root {
+    --mau-nen: #fef7f6;
+    --mau-trang: #ffffff;
+    --mau-vien: #e0e0e0;
+    --vien-cong: 16px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.trang-gio-hang-day-du {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tieu-de-trang {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.khung-chinh {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.cot-trai {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.san-pham-trong-gio {
+    display: flex;
+    align-items: center;
+    background-color: var(--mau-trang);
+    padding: 20px;
+    border-radius: var(--vien-cong);
+    box-shadow: var(--box-shadow);
+}
+
+.anh-san-pham {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+.thong-tin-san-pham {
+    flex-grow: 1;
+}
+
+.ten-san-pham {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+.gia-tien {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 20px;
+    min-width: 120px;
+    text-align: right;
+}
+
+.bo-chon-so-luong {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--mau-vien);
+    border-radius: var(--vien-cong);
+}
+
+.nut-so-luong, .so-luong-hien-tai {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cot-phai {
+    background-color: var(--mau-trang);
+    padding: 25px;
+    border-radius: var(--vien-cong);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tom-tat-don-hang {
+    border-top: 1px solid var(--mau-vien);
+    padding-top: 20px;
+}
+
+.dong-tom-tat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+    .dong-tom-tat.tong-cong {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+.nut-thanh-toan {
+    width: 100%;
+    background-color: #f7b2b2;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .khung-chinh {
+        grid-template-columns: 1fr;
+    }
+}

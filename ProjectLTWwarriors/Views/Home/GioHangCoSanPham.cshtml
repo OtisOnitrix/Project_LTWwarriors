@@ -1,0 +1,64 @@
+﻿
+@model List<ProjectLTWwarriors.Models.MatHangTrongGio>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tongSoLuong = Model.Sum(item => item.SoLuong);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GioHangCoSanPham</title>
+    <link href="~/Content/GioHangCoSanPham.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="trang-gio-hang-day-du">
+            <h1 class="tieu-de-trang">Giỏ hàng (@tongSoLuong)</h1>
+            <div class="khung-chinh">
+                <div class="cot-trai">
+                    @foreach (var item in Model)
+                    {
+                        <div class="san-pham-trong-gio">
+                            @{ var hinhAnh = item.SanPham.ImageUrls.FirstOrDefault(); }
+                            <img class="anh-san-pham" src="@Url.Content(hinhAnh ?? "~/")" alt="@item.SanPham.Name" />
+                            <div class="thong-tin-san-pham">
+                                <h2 class="ten-san-pham">@item.SanPham.Name</h2>
+                            </div>
+                            <span class="gia-tien">@string.Format("{0:N0}đ", item.SanPham.Price)</span>
+                            <div class="bo-chon-so-luong">
+                                <button class="nut-so-luong">-</button>
+                                <input type="text" value="@item.SoLuong" class="so-luong-hien-tai" readonly>
+                                <button class="nut-so-luong">+</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="cot-phai">
+                    @{
+                        decimal tongTienHang = Model.Sum(item => item.SanPham.Price * item.SoLuong);
+                        decimal giamGia = 0;
+                        decimal vanChuyen = 0;
+                        decimal tongCong = tongTienHang - giamGia + vanChuyen;
+                    }
+                    <div class="tom-tat-don-hang">
+                        <div class="dong-tom-tat">
+                            <span>Tổng tiền hàng</span>
+                            <span>@string.Format("{0:N0}đ", tongTienHang)</span>
+                        </div>
+                        <div class="dong-tom-tat tong-cong">
+                            <span>Tổng cộng</span>
+                            <span>@string.Format("{0:N0}đ", tongCong)</span>
+                        </div>
+                    </div>
+                    <button class="nut-thanh-toan">Tiến hành thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

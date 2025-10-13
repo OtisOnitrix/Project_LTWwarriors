@@ -12,7 +12,7 @@ namespace ProjectLTWwarriors.Models
         public decimal Price { get; set; }
 
         // Cho phép trống
-        public string Storage { get; set; }
+        public List<string> Storage { get; set; }
 
         public List<string> Colors { get; set; }
 

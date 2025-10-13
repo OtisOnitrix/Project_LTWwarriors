@@ -22,57 +22,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: 140%; /* 28px */
-}
-
-/*.Nav {
-    display: flex;
-    align-items: center;
-    gap: 69px;
-}
-
-.NavText {
-    color: #000;
-    font-family: sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%;*/ /* 19.6px */
-    /*cursor: pointer;
-    display: flex;
-    align-items: center;
-    height: 84px;*/ /* Cho chiều cao bằng với Header */
-/*}*/
-
-/* XÓA .Nav VÀ .NavText CŨ, THAY BẰNG ĐOẠN NÀY */
-
-/* Style cho cả khối menu */
-/*.Nav ul {
-    display: flex;*/ /* Xếp các mục menu nằm ngang */
-    /*align-items: center;*/ /* Căn giữa các mục menu theo chiều dọc */
-    /*height: 84px;*/ /* Đặt chiều cao bằng header */
-    /*gap: 69px;*/ /* Khoảng cách giữa các mục */
-    /* Reset style mặc định của danh sách */
-    /*list-style-type: none;
-    margin: 0;
-    padding: 0;
-}*/
-
-/* Style cho từng link menu */
-/*.NavText {*/ /* Giờ đây là thẻ <a> */
-    /*color: #000;
-    font-family: sans-serif;
-    font-size: 18px;
-    font-weight: 500;
     cursor: pointer;
-    text-decoration: none;*/ /* Bỏ gạch chân link */
-    /* Căn giữa chữ bên trong khu vực của nó */
-    /*display: flex;
-    align-items: center;
-    height: 100%;*/ /* Chiếm hết chiều cao của thẻ cha (ul) */
-/*}*/
+}
 
 
-/* XÓA HẾT CSS CŨ CỦA MENU VÀ THAY BẰNG ĐOẠN NÀY */
 
 /* 1. Style cho danh sách <ul> là chính */
 .Nav ul {
@@ -166,4 +119,15 @@
     .cart-icon:hover {
         color: #ff6600; /* đổi màu khi hover */
         transform: scale(1.2); /* phóng to nhẹ khi hover */
+    }
+
+/* QUY TẮC CỤ THỂ CHO LINK TRONG HEADER */
+.Header .Nav a { /* Cụ thể hơn, chỉ áp dụng cho link trong khu vực Nav */
+    color: #333; /* Màu chữ gốc */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+    /* Quy tắc khi rê chuột vào link trong header */
+    .Header .Nav a:hover {
+        color: #d70018; /* Màu đỏ khi hover */
     }
