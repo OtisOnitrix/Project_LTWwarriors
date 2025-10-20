@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "iPhone";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/iPhone.css" rel="stylesheet" />
+
+<div>
+    <div class="Bo_Khung_San_Pham">
+        <p class="Bo_Khung_San_Pham_Title">iPhone</p>
+        <a class="Banner"></a>
+
+        <div class="Danh_Sach_San_Pham">
+            <div class="The_San_Pham">
+                <a href="@Url.Action("ProductDetail", "Home", new { id = 1 })">
+                    <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17-pro-blue-thumb-650x650.png" />
+                    <p class="TheSanPham_TenThietBi">iPhone 17 promax 256GB</p>
+                    <p class="TheSanPham_Gia">37.990.000đ</p>
+                </a>
+            </div>
+
+            <div class="The_San_Pham">
+                <a href="@Url.Action("ProductDetail", "Home", new { id = 2 })">
+                    <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17-pro.png" />
+                    <p class="TheSanPham_TenThietBi">iPhone 17 pro 256GB</p>
+                    <p class="TheSanPham_Gia">34.990.000đ</p>
+                </a>
+
+            </div>
+
+            <div class="The_San_Pham">
+                <a href="@Url.Action("ProductDetail", "Home", new { id = 3 })">
+                    <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-17.png" />
+                    <p class="TheSanPham_TenThietBi">iPhone 17 Air 256GB</p>
+                    <p class="TheSanPham_Gia">31.990.000đ</p>
+                </a>
+
+            </div>
+
+            <div class="The_San_Pham">
+                <a href="@Url.Action("ProductDetail", "Home", new { id = 4 })">
+                    <img class="TheSanPham_HinhAnh" src="~/images_LandingPage/iphone-air-xanh.png" />
+                    <p class="TheSanPham_TenThietBi">iPhone 17 256GB</p>
+                    <p class="TheSanPham_Gia">24.990.000đ</p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

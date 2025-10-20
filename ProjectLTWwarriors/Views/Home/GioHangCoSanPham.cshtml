@@ -45,18 +45,76 @@
                         decimal vanChuyen = 0;
                         decimal tongCong = tongTienHang - giamGia + vanChuyen;
                     }
-                    <div class="tom-tat-don-hang">
-                        <div class="dong-tom-tat">
-                            <span>Tổng tiền hàng</span>
-                            <span>@string.Format("{0:N0}đ", tongTienHang)</span>
-                        </div>
-                        <div class="dong-tom-tat tong-cong">
-                            <span>Tổng cộng</span>
-                            <span>@string.Format("{0:N0}đ", tongCong)</span>
-                        </div>
+                    <div class="hop-dangky">
+                        <form class="form_dang_ky">
+                            <div class="Mo_ta">Thông tin khách hàng</div>
+                            <div class="hang-input">
+                                <input type="text" placeholder="Họ và tên" class="o-nhap" />
+                                <input type="text" placeholder="Số điện thoại" class="o-nhap" />
+
+                            </div>
+                        </form>
                     </div>
-                    <button class="nut-thanh-toan">Tiến hành thanh toán</button>
-                </div>
+
+                    <div class="hop-dangky">
+                        <form class="form_dang_ky">
+                            <div class="Mo_ta">Địa chỉ nhận hàng</div>
+                            <div class="hang-input ">
+                                <input type="text" placeholder="Tỉnh/Thànhphố" class="o-nhap" />
+                                <input type="text" placeholder="Phường/xã" class="o-nhap" />
+                            </div>
+                            <div class="hang-input single">
+                                <input type="text" placeholder="Số nhà, tên đường" class="o-nhap" />
+                            </div>
+                            <div class="hang-input single">
+                                <input type="text" placeholder="Nhập ghi chú (nếu có)" class="o-nhap" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="hop-dangky">
+                        <form class="form_dang_ky">
+                            <div class="Mo_ta">Phương thức thanh toán</div>
+                            <div class="hang-input single">
+                                <input type="button" value="Thanh toán khi nhận hàng" class="o-nhap" />
+                            </div>
+                            <div class="hang-input single">
+                                <input type="button" value="Ví điện tử Momo" class="o-nhap" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="hop-dangky">
+                        <form class="form_dang_ky">
+                            <div class="Mo_ta">Mã khuyến mãi</div>
+                            <div class="hang-input single">
+                                <input type="text" placeholder="Nhập mã khuyến mãi" class="o-nhap" />
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="hop-dangky">
+                        <div class="tom-tat-don-hang">
+                            <div class="dong-tom-tat">
+                                <span>Tổng tiền hàng</span>
+                                <span>@string.Format("{0:N0}đ", tongTienHang)</span>
+                            </div>
+
+                            <div class="dong-tom-tat">
+                                <span>Vận chuyển</span>
+                                <span>@string.Format("{0:N0}đ", vanChuyen)</span>
+                            </div>
+
+                            <div class="dong-tom-tat tong-cong">
+                                <span>Tổng cộng</span>
+                                <span>@string.Format("{0:N0}đ", tongCong)</span>
+                            </div>
+                        </div>
+                        <a href="/Home/ThanhToanThanhCong" class="nut-thanh-toan">Tiến hành thanh toán</a>
+                    </div>
+                    </div>
+                    
             </div>
         </div>
     </div>

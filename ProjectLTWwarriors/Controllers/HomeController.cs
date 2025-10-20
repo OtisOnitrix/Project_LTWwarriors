@@ -36,7 +36,70 @@ namespace ProjectLTWwarriors.Controllers
             return View();
         }
 
-        
+        public ActionResult iPhone()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Mac()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult iPad()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Watch()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult TaiNghe_Loa()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult PhuKien()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Welcome()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult WelcomeBack()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult ThanhToanThanhCong()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+
 
         public ActionResult ProductDetail(int? id)
         {
@@ -70,49 +133,7 @@ namespace ProjectLTWwarriors.Controllers
             return View(gioHang);
         }
 
-        //// Action để xử lý việc thêm sản phẩm vào giỏ (sẽ được gọi bằng JavaScript)
-        //[HttpPost]
-        //public ActionResult GioHangCoSanPham(int maSP, int soLuong)
-        //{
-        //    // Lấy giỏ hàng hiện tại từ Session
-        //    var gioHang = Session["GioHang"] as List<MatHangTrongGio>;
-
-        //    // Nếu chưa có giỏ hàng, tạo mới
-        //    if (gioHang == null)
-        //    {
-        //        gioHang = new List<MatHangTrongGio>();
-        //    }
-
-        //    // Kiểm tra xem sản phẩm đã có trong giỏ chưa
-        //    var matHang = gioHang.FirstOrDefault(m => m.SanPham.Id == maSP);
-
-        //    if (matHang == null) // Nếu chưa có
-        //    {
-        //        // Tìm sản phẩm trong "database" (lớp ProductData)
-        //        var sanPham = ProductData.GetAllProducts().FirstOrDefault(p => p.Id == maSP);
-        //        if (sanPham != null)
-        //        {
-        //            // Tạo một mặt hàng mới và thêm vào giỏ
-        //            var matHangMoi = new MatHangTrongGio
-        //            {
-        //                SanPham = sanPham,
-        //                SoLuong = soLuong
-        //            };
-        //            gioHang.Add(matHangMoi);
-        //        }
-        //    }
-        //    else // Nếu đã có
-        //    {
-        //        // Chỉ cần cập nhật lại số lượng
-        //        matHang.SoLuong += soLuong;
-        //    }
-
-        //    // Lưu giỏ hàng trở lại vào Session
-        //    Session["GioHang"] = gioHang;
-
-        //    // Trả về kết quả JSON để JavaScript biết đã thành công
-        //    return Json(new { success = true, message = "Đã thêm sản phẩm vào giỏ hàng!" });
-
+        
 
 
         // HÀM SỐ 1: DÙNG ĐỂ "XEM" GIỎ HÀNG

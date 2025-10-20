@@ -21,7 +21,8 @@ namespace ProjectLTWwarriors.Data
                     Colors = new List<string> { "#003366", "#C0C0C0", "#FF4500"},
                     ImageUrls = new List<string>
                     {
-                        "~/images_LandingPage/iphone-17-pro-blue-thumb-650x650.png"
+                        "~/images_LandingPage/iphone-17-pro-blue-thumb-650x650.png",
+                        "~/images_LandingPage/IP17ProMax.jpg"
 
                     }
                 },

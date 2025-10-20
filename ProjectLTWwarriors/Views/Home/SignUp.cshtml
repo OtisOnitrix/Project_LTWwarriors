@@ -21,7 +21,7 @@
                     <div class="Tieu_de"> Tạo tài khoản</div>
                     <div class="Mo_ta"> Khởi đầu hành trình cùng LTW Warriors ngay hôm nay!</div>
 
-                    <form class="form_dang_ky">
+                    <form class="form_dang_ky" method="POST" action="/Account/Register">
                         <div class="hang-input">
                             <input type="text" placeholder="Họ" class="o-nhap" />
                             <input type="text" placeholder="Ten" class="o-nhap" />
@@ -43,7 +43,7 @@
                         </div>
 
 
-                    </form>
+                    
                     <ul class="yeu-cau">
                         <li>8-30 ký tự</li>
                         <li>Ít nhất một chữ viết thường</li>
@@ -52,14 +52,14 @@
                         <li>Ít nhất 1 ký tự đặc biệt (vd:!#%^%,v.v)</li>
                     </ul>
 
-                    <form class="form_dang_ky">
+                    
                         <div class="hang-input">
                             <input type="password" placeholder="Xác nhận mật khẩu" class="o-nhap" />
                         </div>
 
                         <div class="hang-nut">
-                            <button type="button" class="nut nut-trang">Trở về</button>
-                            <button type="submit" class="nut nut-do">Tiếp tục</button>
+                            <a href="/Home/SignIn" class="nut nut-trang">Trở về</a>
+                            <a href="/Home/Welcome" class="nut nut-do">Tiếp tục</a>
                         </div>
                     </form>
                 </div>

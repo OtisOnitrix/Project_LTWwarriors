@@ -6,17 +6,21 @@
 
 .Banner {
     display: flex;
-    height: 600px;
-    background-image: url('../images_landingpage/backgrbanner.png');
+    height: 300px;
+    width: 1170px;
+    border-radius: 25px;
+    
+    background-image: url('../images_landingpage/bannerwatch.jpg');
     padding: 20px;
     position: relative;
     align-items: center;
     justify-content: center;
-    background-size: cover; /*QUAN TRỌNG NHẤT: Co dãn ảnh để lấp đầy khung */
     background-position: center; /*Căn ảnh vào giữa, để phần đẹp nhất lộ ra */
     background-repeat: no-repeat; /*Không lặp lại ảnh */
     margin-bottom: 40px;
+    background-size: contain;
 }
+
 
 .Bo_Khung_San_Pham {
     display: flex;
@@ -28,7 +32,6 @@
 }
 
 .Bo_Khung_San_Pham_Title {
-    
     font-size: 36px;
     font-weight: 600;
     display: flex;
@@ -39,7 +42,6 @@
     margin-top: 40px;
     font-family: sans-serif;
     color: #000;
-    
 }
 
 .Danh_Sach_San_Pham {
@@ -67,8 +69,6 @@
 
 .The_San_Pham_Luoi {
     display: grid;
-    
-
     justify-items: center;
     flex-grow: 1;
     gap: 16px; /* Khoảng cách giữa các ảnh */
@@ -126,11 +126,3 @@ ul {
     padding: 0;
     margin: 0;
 }
-
-
-
-
-
-
-
-

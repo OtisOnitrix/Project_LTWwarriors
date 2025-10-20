@@ -5,7 +5,7 @@
 
 /* --- Footer --- */
 .site-footer {
-    background-color: #fceee9; /* Màu nền hồng nhạt của footer */
+    background-color: ghostwhite; 
     color: #333;
     padding: 50px 0 20px 0;
     margin-top: 50px;
@@ -39,6 +39,10 @@
     margin-top: 30px; /* Thêm khoảng cách cho các tiêu đề phụ */
 }
 
+.footer-column li {
+    margin-bottom: 12px;
+}
+
 
 /* --- Icon Mạng xã hội --- */
 .social-icons {
@@ -55,7 +59,7 @@
         width: 36px;
         height: 36px;
         background-color: #000;
-        color: #fff;
+        color: white;
         border-radius: 50%;
         font-size: 18px;
         transition: background-color 0.3s;
@@ -95,5 +99,31 @@
         color: #007bff; /* Thay đổi màu khi rê chuột */
         text-decoration: underline ;
         }
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Màu nền trắng cho trang */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #000;
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
 
 

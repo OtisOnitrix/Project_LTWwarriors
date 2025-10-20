@@ -20,8 +20,8 @@
 
 .khung-anh-chinh img {
     width: 100%;
-    border-radius: 16px;
-    border: 1px solid #eee;
+    /*border-radius: 16px;*/
+    /*border: 1px solid #eee;*/
 }
 
 .danh-sach-anh-nho {
@@ -58,6 +58,10 @@
 /* ----- CỘT BÊN PHẢI - THÔNG TIN ----- */
 .thong-tin-chi-tiet {
     flex: 1;
+    border: 1px solid #BFC0C0;
+    border-radius: 16px;
+    padding: 25px 25px;
+    margin-bottom: 20px;
 }
 
 .ten-san-pham {
@@ -69,7 +73,7 @@
 .gia-san-pham {
     font-size: 32px;
     font-weight: bold;
-    color: #d70018;
+    color: black;
     margin: 10px 0 20px;
 }
 
@@ -124,7 +128,7 @@
 .khung-nhap-so-luong {
     display: flex;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 120px;
     align-items: center;
 }
@@ -157,7 +161,7 @@
     width: 100%;
     padding: 15px;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -180,7 +184,7 @@
 
 /* ----- KHUYẾN MÃI ----- */
 .khuyen-mai {
-    border: 1px solid #f0f0f0;
+    border: 1px solid #BFC0C0;
     border-radius: 12px;
     padding: 15px;
     margin-bottom: 20px;
