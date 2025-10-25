@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+    var orderId = (TempData["LastOrderId"] as string) ?? (ViewBag.OrderId as string); /*để POST truyền dữ liệu được nhận vô*/
 }
 
 <!DOCTYPE html>
@@ -30,8 +31,24 @@
                 Chúng ta cùng mua sắp tiếp ha.
             </p>
 
-            <a href="/home/LandingPage" class="complete-button">
-                Tiếp tục
+            @* Nút xem chi tiết đơn *@
+            @if (!string.IsNullOrEmpty(orderId))
+            {
+                <a class="complete-button" href="@Url.Action("OrderDetail", "Home", new { id = orderId })">
+                    Xem chi tiết đơn hàng
+                </a>
+            }
+
+            <br />
+
+        @*<a href="/home/LandingPage" class="complete-button">
+             Tiếp tục
+        </a>*@
+
+            @*Nút xem lịch sử mua hàng*@
+            <a class="complete-button" style="margin-top:10px;"
+               href="@Url.Action("LichSuMuaHang", "Home")">
+                Xem lịch sử mua hàng
             </a>
 
         </div>

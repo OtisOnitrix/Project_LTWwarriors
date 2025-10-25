@@ -120,7 +120,21 @@
                                 <span>@string.Format("{0:N0}đ", tongCong)</span>
                             </div>
                         </div>
-                        <a href="/Home/ThanhToanThanhCong" class="nut-thanh-toan">Tiến hành thanh toán</a>
+
+                        @*Nó giúp gửi (truyền) các giá trị bạn nhập ở giao diện lên backend để tạo đơn hàng.*@
+                        @using (Html.BeginForm("TienHanhThanhToan", "Home", FormMethod.Post))
+                        {
+                            <!-- có thể ẩn input -->
+                            <input type="hidden" name="hoTen" value="Test User" />
+                            <input type="hidden" name="soDienThoai" value="0123456789" />
+                            <input type="hidden" name="diaChi" value="TP.HCM" />
+                            <input type="hidden" name="phuongThucThanhToan" value="COD" />
+                            <input type="hidden" name="maKhuyenMai" />
+                            <input type="hidden" name="phiVanChuyen" value="0" />
+                            <input type="hidden" name="giamGia" value="0" />
+
+                            <button type="submit" class="nut-thanh-toan">Tiến hành thanh toán</button>
+                        }
                     </div>
                     </div>
                     
