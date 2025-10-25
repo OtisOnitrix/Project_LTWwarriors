@@ -94,8 +94,22 @@ namespace ProjectLTWwarriors.Controllers
 
         public ActionResult ThanhToanThanhCong()
         {
-            ViewBag.Message = "Your contact page.";
+            // Lấy từ TempData
+            var orderId = TempData["LastOrderId"] as string;
 
+            // Giữ TempData sống thêm 1 request nữa để view đọc được
+            TempData.Keep("LastOrderId");
+
+            // Nếu TempData rỗng thì fallback sang Session
+            if (string.IsNullOrEmpty(orderId))
+            {
+                var ds = Session["DonHangs"] as List<DonHang>;
+                orderId = ds?.FirstOrDefault()?.MaDon;
+            }
+
+            System.Diagnostics.Debug.WriteLine(">>> OrderId được gửi sang View: " + (orderId ?? "NULL"));
+
+            ViewBag.OrderId = orderId;
             return View();
         }
 
@@ -133,7 +147,7 @@ namespace ProjectLTWwarriors.Controllers
             return View(gioHang);
         }
 
-        
+
 
 
         // HÀM SỐ 1: DÙNG ĐỂ "XEM" GIỎ HÀNG
@@ -196,7 +210,83 @@ namespace ProjectLTWwarriors.Controllers
             // Trả về thông báo cho JavaScript
             return Json(new { success = true, message = "Đã thêm sản phẩm vào giỏ hàng!" });
         }
-    }
 
-    
-}   
+
+
+        // ============ CHECKOUT: Tạo đơn & chuyển tới chi tiết đơn ============
+        // POST: /Home/TienHanhThanhToan
+        [HttpPost]
+        public ActionResult TienHanhThanhToan(
+            string hoTen, string soDienThoai, string diaChi,
+            string phuongThucThanhToan, string maKhuyenMai,
+            decimal? phiVanChuyen, decimal? giamGia)
+        {
+            // Lấy giỏ hàng từ Session
+            var gioHang = Session["GioHang"] as List<MatHangTrongGio>;
+            if (gioHang == null || gioHang.Count == 0)
+                return RedirectToAction("XemGioHang");
+
+            // Tính tiền
+            decimal tamTinh = gioHang.Sum(x => (decimal)x.SanPham.Price * x.SoLuong);
+            decimal ship = phiVanChuyen ?? 0;
+            decimal giam = giamGia ?? 0;
+            decimal tong = Math.Max(0, tamTinh + ship - giam);
+
+            // Tạo mã đơn
+            string maDon = "DH" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
+
+            // Tạo object đơn hàng (dùng luôn items trong giỏ)
+            var don = new DonHang
+            {
+                MaDon = maDon,
+                CreatedAt = DateTime.Now, /*dòng CreateAt đó thể hiện cho biết khi đặt sẽ lấy thời gian thực tế lúc đặt*/
+                HoTen = hoTen,
+                SoDienThoai = soDienThoai,
+                DiaChiDayDu = diaChi,
+                PhuongThucThanhToan = phuongThucThanhToan,
+                TrangThai = (phuongThucThanhToan ?? "").ToUpper().Contains("COD") ? "processing" : "paid",
+                TamTinh = tamTinh,
+                PhiVanChuyen = ship,
+                GiamGia = giam,
+                TongCong = tong,
+                MaKhuyenMai = string.IsNullOrWhiteSpace(maKhuyenMai) ? null : maKhuyenMai,
+                Items = gioHang.Select(x => new MatHangTrongGio { SanPham = x.SanPham, SoLuong = x.SoLuong }).ToList()
+            };
+
+            // Lưu vào Session “DonHangs”
+            var ds = Session["DonHangs"] as List<DonHang> ?? new List<DonHang>();
+            ds.Insert(0, don);
+            Session["DonHangs"] = ds;
+
+            // Xoá giỏ
+            Session["GioHang"] = null;
+
+            // Truyền orderId sang trang Thành công (sống 1 lần redirect)
+            TempData["LastOrderId"] = maDon;
+
+            System.Diagnostics.Debug.WriteLine(">> Đã tạo đơn: " + maDon);
+            System.Diagnostics.Debug.WriteLine(">> TempData LastOrderId = " + maDon);
+
+
+            // Đi đến trang thành công (nút ở đó sẽ dẫn qua chi tiết đơn)
+            return RedirectToAction("ThanhToanThanhCong");
+        }
+
+        // GET: /Home/OrderDetail?id=...
+        public ActionResult OrderDetail(string id)
+        {
+            var ds = Session["DonHangs"] as List<DonHang> ?? new List<DonHang>();
+            var don = ds.FirstOrDefault(x => x.MaDon == id);
+            if (don == null) return HttpNotFound("Không tìm thấy đơn hàng");
+            return View(don); // Views/Home/OrderDetail.cshtml
+        }
+
+        // Tạo trang để check lịch sử mua hàng
+        // GET: /Home/LichSuMuaHang
+        public ActionResult LichSuMuaHang()
+        {
+            var ds = Session["DonHangs"] as List<DonHang> ?? new List<DonHang>();
+            return View(ds);
+        }
+    }
+}
